@@ -221,16 +221,16 @@ All testbenches are self-checking. Running any of them should produce:
 ![NOT Gate Waveform](sim/not_gate_waveform.png)
 
 ### NAND Gate
-![NAND Gate Waveform](sim/nand_gate_waveform.png)
+![NAND Gate Waveform](sim/nand gate waveform.png)
 
 ### NOR Gate
-![NOR Gate Waveform](sim/nor_gate_waveform.png)
+![NOR Gate Waveform](sim/nor gate waveform.png)
 
 ### XOR Gate
-![XOR Gate Waveform](sim/xor_gate_waveform.png)
+![XOR Gate Waveform](sim/xor gate waveform.png)
 
 ### XNOR Gate
-![XNOR Gate Waveform](sim/xnor_gate_waveform.png)
+![XNOR Gate Waveform](sim/xnor gate waveform.png)
 
 ---
 
