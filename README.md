@@ -51,14 +51,21 @@ Each gate is implemented using **continuous assignment (`assign`)** — the stan
 │   ├── tb_xor_gate.v           # XOR gate testbench
 │   └── tb_xnor_gate.v          # XNOR gate testbench
 │
-├── sim/                        # Simulation waveform screenshots
-│   ├── and_gate_waveform.png
-│   ├── or_gate_waveform.png
-│   ├── not_gate_waveform.png
-│   ├── nand_gate_waveform.png
-│   ├── nor_gate_waveform.png
-│   ├── xor_gate_waveform.png
-│   └── xnor_gate_waveform.png
+├── sim/
+├── and_gate_waveform.png       ← GTKWave screenshot
+├── and_gate_terminal.png       ← Terminal output screenshot
+├── or_gate_waveform.png
+├── or_gate_terminal.png
+├── not_gate_waveform.png
+├── not_gate_terminal.png
+├── nand_gate_waveform.png
+├── nand_gate_terminal.png
+├── nor_gate_waveform.png
+├── nor_gate_terminal.png
+├── xor_gate_waveform.png
+├── xor_gate_terminal.png
+├── xnor_gate_waveform.png
+└── xnor_gate_terminal.png
 │
 └── README.md
 ```
@@ -209,25 +216,46 @@ Time=30 a=1 b=1 y=1
 ## Waveforms
 
 ### AND Gate
+
 ![AND Gate Waveform](sim/and_gate_waveform.png)
 
+![AND Gate Terminal Output](sim/and_gate_terminal.png)
+
 ### OR Gate
+
 ![OR Gate Waveform](sim/or_gate_waveform.png)
 
+![OR Gate Terminal Output](sim/or_gate_terminal.png)
+
 ### NOT Gate
+
 ![NOT Gate Waveform](sim/not_gate_waveform.png)
 
+![NOT Gate Terminal Output](sim/not_gate_terminal.png)
+
 ### NAND Gate
+
 ![NAND Gate Waveform](sim/nand_gate_waveform.png)
 
+![NAND Gate Terminal Output](sim/nand_gate_terminal.png)
+
 ### NOR Gate
+
 ![NOR Gate Waveform](sim/nor_gate_waveform.png)
 
+![NOR Gate Terminal Output](sim/nor_gate_terminal.png)
+
 ### XOR Gate
+
 ![XOR Gate Waveform](sim/xor_gate_waveform.png)
 
+![XOR Gate Terminal Output](sim/xor_gate_terminal.png)
+
 ### XNOR Gate
+
 ![XNOR Gate Waveform](sim/xnor_gate_waveform.png)
+
+![XNOR Gate Terminal Output](sim/xnor_gate_terminal.png)
 
 ---
 
