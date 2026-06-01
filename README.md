@@ -175,25 +175,25 @@ gtkwave dump.vcd
 
 ```bash
 # AND
-iverilog -o sim.vvp src/and_gate.v   tb/and_gate_tb.v   && vvp sim.vvp
+iverilog -o sim.vvp src/and_gate.v   tb/and_gate_tb.v   && vvp and_sim
 
 # OR
-iverilog -o sim.vvp src/or_gate.v    tb/or_gate_tb.v    && vvp sim.vvp
+iverilog -o sim.vvp src/or_gate.v    tb/or_gate_tb.v    && vvp or_sim
 
 # NOT
-iverilog -o sim.vvp src/not_gate.v   tb/not_gate_tb.v   && vvp sim.vvp
+iverilog -o sim.vvp src/not_gate.v   tb/not_gate_tb.v   && vvp not_sim
 
 # NAND
-iverilog -o sim.vvp src/nand_gate.v  tb/nand_gate_tb.v  && vvp sim.vvp
+iverilog -o sim.vvp src/nand_gate.v  tb/nand_gate_tb.v  && vvp nand_sim
 
 # NOR
-iverilog -o sim.vvp src/nor_gate.v   tb/nor_gate_tb.v   && vvp sim.vvp
+iverilog -o sim.vvp src/nor_gate.v   tb/nor_gate_tb.v   && vvp nor_sim
 
 # XOR
-iverilog -o sim.vvp src/xor_gate.v   tb/xor_gate_tb.v   && vvp sim.vvp
+iverilog -o sim.vvp src/xor_gate.v   tb/xor_gate_tb.v   && vvp xor_sim
 
 # XNOR
-iverilog -o sim.vvp src/xnor_gate.v  tb/xnor_gate_tb.v  && vvp sim.vvp
+iverilog -o sim.vvp src/xnor_gate.v  tb/xnor_gate_tb.v  && vvp xnor_sim
 ```
 
 ### Expected simulation output
