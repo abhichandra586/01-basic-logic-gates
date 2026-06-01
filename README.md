@@ -68,7 +68,7 @@ Each gate is implemented using **continuous assignment (`assign`)** — the stan
 ## Gates Implemented
 
 | # | Gate | Symbol | Boolean Expression | Gate Type |
-|---|------|--------|-------------------|-----------|
+|---|------|--------|--------------------|-----------|
 | 1 | AND  | &      | Y = A · B          | Basic     |
 | 2 | OR   | \|     | Y = A + B          | Basic     |
 | 3 | NOT  | ~      | Y = Ā              | Basic     |
@@ -191,20 +191,17 @@ iverilog -o sim.vvp src/xnor_gate.v  tb/tb_xnor_gate.v  && vvp sim.vvp
 
 ### Expected simulation output
 
-All testbenches are self-checking. Running any of them should produce:
+Each testbench applies all input combinations and displays
+the input and output values on the terminal. A `.vcd` waveform
+file is also generated which can be opened in GTKWave.
+
+Example output for AND gate:
 
 ```
-============================================
-  Gate Testbench
-============================================
-  PASS | Test 1
-  PASS | Test 2
-  PASS | Test 3
-  PASS | Test 4
-============================================
-  Results:  PASS=4   FAIL=0
-  ALL TESTS PASSED
-============================================
+Time=0  a=0 b=0 y=0
+Time=10 a=0 b=1 y=0
+Time=20 a=1 b=0 y=0
+Time=30 a=1 b=1 y=1
 ```
 
 ---
@@ -221,16 +218,16 @@ All testbenches are self-checking. Running any of them should produce:
 ![NOT Gate Waveform](sim/not_gate_waveform.png)
 
 ### NAND Gate
-![NAND Gate Waveform](sim/nand gate waveform.png)
+![NAND Gate Waveform](sim/nand_gate_waveform.png)
 
 ### NOR Gate
-![NOR Gate Waveform](sim/nor gate waveform.png)
+![NOR Gate Waveform](sim/nor_gate_waveform.png)
 
 ### XOR Gate
-![XOR Gate Waveform](sim/xor gate waveform.png)
+![XOR Gate Waveform](sim/xor_gate_waveform.png)
 
 ### XNOR Gate
-![XNOR Gate Waveform](sim/xnor gate waveform.png)
+![XNOR Gate Waveform](sim/xnor_gate_waveform.png)
 
 ---
 
@@ -243,14 +240,13 @@ All testbenches are self-checking. Running any of them should produce:
 - Bitwise operators — `&`, `|`, `~`, `^`, `~&`, `~|`, `~^`
 - Testbench structure — `timescale`, `reg`, `initial` block, `$display`, `$dumpfile`, `$dumpvars`, `$finish`
 - Module instantiation — named port connection syntax `.port(signal)`
-- `===` operator — for X/Z-aware comparison in testbenches
 
 ### Digital Design
 - Behaviour of all 7 fundamental gates
 - NAND and NOR as universal gates — any circuit can be built from only these
 - XOR as the sum generator in binary addition — foundation of the ALU (coming in Repo 5)
 - Difference between combinational logic (no memory) and sequential logic (covered in Repo 3)
-- Continuous assignment vs procedural assignment — when to use each
+- Continuous assignment — models real wires that are always active
 
 ---
 
@@ -260,7 +256,7 @@ All testbenches are self-checking. Running any of them should produce:
 |------|---------|---------|
 | Icarus Verilog | 0.9.7 / 1.1 | Compilation and simulation |
 | GTKWave | 3.3.x | Waveform viewing and verification |
-| VS Code | Latest | Code editor with Verilog extension |
+| VS Code | Latest | Code editor |
 | Git | Latest | Version control |
 
 ---
@@ -286,7 +282,7 @@ This repository is **Step 1** in an 8-step roadmap building up to a complete 16-
 
 ## Author
 
-**Abhi** — B.Tech ECE, 3rd Year  
+**Abhi** — B.Tech ECE, 3rd Year
 Building a complete VLSI design portfolio from logic gates to a pipelined processor.
 
 [![GitHub](https://img.shields.io/badge/GitHub-abhichandra586-181717?style=flat&logo=github)](https://github.com/abhichandra586)
