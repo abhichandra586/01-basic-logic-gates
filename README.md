@@ -54,18 +54,18 @@ Each gate is implemented using **continuous assignment (`assign`)** — the stan
 ├── sim/                        # Simulation waveforms and outputs
 │   ├── and_gate_waveform.png   # GTKWave screenshot
 │   ├── and_gate_terminal.png   # Terminal output screenshot
-│   ├── or_gate_waveform.png
-│   ├── or_gate_terminal.png
-│   ├── not_gate_waveform.png
-│   ├── not_gate_terminal.png
-│   ├── nand_gate_waveform.png
-│   ├── nand_gate_terminal.png
-│   ├── nor_gate_waveform.png
-│   ├── nor_gate_terminal.png
-│   ├── xor_gate_waveform.png
-│   ├── xor_gate_terminal.png
-│   ├── xnor_gate_waveform.png
-│   └── xnor_gate_terminal.png
+│   ├── or_gate_waveform.png    # GTKWave screenshot
+│   ├── or_gate_terminal.png    # Terminal output screenshot
+│   ├── not_gate_waveform.png   # GTKWave screenshot
+│   ├── not_gate_terminal.png   # Terminal output screenshot
+│   ├── nand_gate_waveform.png  # GTKWave screenshot
+│   ├── nand_gate_terminal.png  # Terminal output screenshot
+│   ├── nor_gate_waveform.png   # GTKWave screenshot
+│   ├── nor_gate_terminal.png   # Terminal output screenshot
+│   ├── xor_gate_waveform.png   # GTKWave screenshot
+│   ├── xor_gate_terminal.png   # Terminal output screenshot
+│   ├── xnor_gate_waveform.png  # GTKWave screenshot
+│   └── xnor_gate_terminal.png  # Terminal output screenshot
 │
 └── README.md
 ```
