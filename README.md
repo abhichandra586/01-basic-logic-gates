@@ -9,6 +9,7 @@
 - [Overview](#overview)
 - [Repository Structure](#repository-structure)
 - [Gates Implemented](#gates-implemented)
+- [Block Diagram](#block-diagram)
 - [Truth Tables](#truth-tables)
 - [Simulation Instructions](#simulation-instructions)
 - [Waveforms](#waveforms)
@@ -67,6 +68,9 @@ Each gate is implemented using **continuous assignment (`assign`)** — the stan
 │   ├── xnor_gate_waveform.png  # GTKWave screenshot
 │   └── xnor_gate_terminal.png  # Terminal output screenshot
 │
+├── docs/                       # Documentation and diagrams
+│   └── gate_symbols.png        # Circuit symbols and truth table reference
+│
 └── README.md
 ```
 
@@ -74,17 +78,25 @@ Each gate is implemented using **continuous assignment (`assign`)** — the stan
 
 ## Gates Implemented
 
-| # | Gate | Symbol | Boolean Expression | Gate Type |
-|---|------|--------|--------------------|-----------|
-| 1 | AND  | &      | Y = A · B          | Basic     |
-| 2 | OR   | \|     | Y = A + B          | Basic     |
-| 3 | NOT  | ~      | Y = Ā              | Basic     |
-| 4 | NAND | ~&     | Y = ̄(A · B)        | Universal |
-| 5 | NOR  | ~\|    | Y = ̄(A + B)        | Universal |
-| 6 | XOR  | ^      | Y = A ⊕ B          | Arithmetic|
-| 7 | XNOR | ~^     | Y = ̄(A ⊕ B)        | Arithmetic|
+| # | Gate | Symbol | Boolean Expression | Gate Type  |
+|---|------|--------|--------------------|------------|
+| 1 | AND  | &      | Y = A · B          | Basic      |
+| 2 | OR   | \|     | Y = A + B          | Basic      |
+| 3 | NOT  | ~      | Y = Ā              | Basic      |
+| 4 | NAND | ~&     | Y = ̄(A · B)        | Universal  |
+| 5 | NOR  | ~\|    | Y = ̄(A + B)        | Universal  |
+| 6 | XOR  | ^      | Y = A ⊕ B          | Arithmetic |
+| 7 | XNOR | ~^     | Y = ̄(A ⊕ B)        | Arithmetic |
 
 > **Note:** NAND and NOR are called **Universal Gates** because any Boolean function can be implemented using only NAND gates or only NOR gates. XOR is the foundation of binary addition — it directly computes the **sum bit** in a half adder.
+
+---
+
+## Block Diagram
+
+The diagram below shows all 7 gate circuit symbols with their Boolean expressions, Verilog `assign` statements, and a combined truth table summary.
+
+![Gate Symbols and Truth Table](docs/gate_symbols.png)
 
 ---
 
@@ -175,32 +187,30 @@ gtkwave dump.vcd
 
 ```bash
 # AND
-iverilog -o sim.vvp src/and_gate.v   tb/and_gate_tb.v   && vvp and_sim
+iverilog -o sim.vvp src/and_gate.v   tb/tb_and_gate.v   && vvp sim.vvp
 
 # OR
-iverilog -o sim.vvp src/or_gate.v    tb/or_gate_tb.v    && vvp or_sim
+iverilog -o sim.vvp src/or_gate.v    tb/tb_or_gate.v    && vvp sim.vvp
 
 # NOT
-iverilog -o sim.vvp src/not_gate.v   tb/not_gate_tb.v   && vvp not_sim
+iverilog -o sim.vvp src/not_gate.v   tb/tb_not_gate.v   && vvp sim.vvp
 
 # NAND
-iverilog -o sim.vvp src/nand_gate.v  tb/nand_gate_tb.v  && vvp nand_sim
+iverilog -o sim.vvp src/nand_gate.v  tb/tb_nand_gate.v  && vvp sim.vvp
 
 # NOR
-iverilog -o sim.vvp src/nor_gate.v   tb/nor_gate_tb.v   && vvp nor_sim
+iverilog -o sim.vvp src/nor_gate.v   tb/tb_nor_gate.v   && vvp sim.vvp
 
 # XOR
-iverilog -o sim.vvp src/xor_gate.v   tb/xor_gate_tb.v   && vvp xor_sim
+iverilog -o sim.vvp src/xor_gate.v   tb/tb_xor_gate.v   && vvp sim.vvp
 
 # XNOR
-iverilog -o sim.vvp src/xnor_gate.v  tb/xnor_gate_tb.v  && vvp xnor_sim
+iverilog -o sim.vvp src/xnor_gate.v  tb/tb_xnor_gate.v  && vvp sim.vvp
 ```
 
 ### Expected simulation output
 
-Each testbench applies all input combinations and displays
-the input and output values on the terminal. A `.vcd` waveform
-file is also generated which can be opened in GTKWave.
+Each testbench applies all input combinations and displays the input and output values on the terminal. A `.vcd` waveform file is also generated which can be opened in GTKWave.
 
 Example output for AND gate:
 
@@ -216,45 +226,31 @@ Time=30 a=1 b=1 y=1
 ## Waveforms
 
 ### AND Gate
-
 ![AND Gate Waveform](sim/and_gate_waveform.png)
-
 ![AND Gate Terminal Output](sim/and_gate_terminal.png)
 
 ### OR Gate
-
 ![OR Gate Waveform](sim/or_gate_waveform.png)
-
 ![OR Gate Terminal Output](sim/or_gate_terminal.png)
 
 ### NOT Gate
-
 ![NOT Gate Waveform](sim/not_gate_waveform.png)
-
 ![NOT Gate Terminal Output](sim/not_gate_terminal.png)
 
 ### NAND Gate
-
 ![NAND Gate Waveform](sim/nand_gate_waveform.png)
-
 ![NAND Gate Terminal Output](sim/nand_gate_terminal.png)
 
 ### NOR Gate
-
 ![NOR Gate Waveform](sim/nor_gate_waveform.png)
-
 ![NOR Gate Terminal Output](sim/nor_gate_terminal.png)
 
 ### XOR Gate
-
 ![XOR Gate Waveform](sim/xor_gate_waveform.png)
-
 ![XOR Gate Terminal Output](sim/xor_gate_terminal.png)
 
 ### XNOR Gate
-
 ![XNOR Gate Waveform](sim/xnor_gate_waveform.png)
-
 ![XNOR Gate Terminal Output](sim/xnor_gate_terminal.png)
 
 ---
