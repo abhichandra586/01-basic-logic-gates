@@ -170,42 +170,42 @@ Replace `and` with the gate name you want to simulate.
 
 **Step 1 — Compile**
 ```bash
-iverilog -o sim.vvp src/and_gate.v tb/tb_and_gate.v
+iverilog -o and_sim src/and_gate.v tb/and_gate_tb.v
 ```
 
 **Step 2 — Run simulation**
 ```bash
-vvp sim.vvp
+vvp and_sim
 ```
 
 **Step 3 — View waveform**
 ```bash
-gtkwave dump.vcd
+gtkwave and_gate.vcd
 ```
 
 ### Quick reference — all gates
 
 ```bash
 # AND
-iverilog -o sim.vvp src/and_gate.v   tb/and_gate_tb.v   && vvp sim.vvp
+iverilog -o and_sim src/and_gate.v   tb/and_gate_tb.v   && vvp and_sim
 
 # OR
-iverilog -o sim.vvp src/or_gate.v    tb/or_gate_tb.v    && vvp sim.vvp
+iverilog -o or_sim src/or_gate.v    tb/or_gate_tb.v    && vvp or_sim
 
 # NOT
-iverilog -o sim.vvp src/not_gate.v   tb/not_gate_tb.v   && vvp sim.vvp
+iverilog -o not_sim src/not_gate.v   tb/not_gate_tb.v   && vvp not_sim
 
 # NAND
-iverilog -o sim.vvp src/nand_gate.v  tb/nand_gate_tb.v  && vvp sim.vvp
+iverilog -o nand_sim src/nand_gate.v  tb/nand_gate_tb.v  && vvp nand_sim
 
 # NOR
-iverilog -o sim.vvp src/nor_gate.v   tb/nor_gate_tb.v   && vvp sim.vvp
+iverilog -o nor_sim src/nor_gate.v   tb/nor_gate_tb.v   && vvp nor_sim
 
 # XOR
-iverilog -o sim.vvp src/xor_gate.v   tb/xor_gate_tb.v   && vvp sim.vvp
+iverilog -o xor_sim src/xor_gate.v   tb/xor_gate_tb.v   && vvp xor_sim
 
 # XNOR
-iverilog -o sim.vvp src/xnor_gate.v  tb/xnor_gate_tb.v  && vvp sim.vvp
+iverilog -o xnor_sim src/xnor_gate.v  tb/xnor_gate_tb.v  && vvp xnor_sim
 ```
 
 ### Expected simulation output
@@ -215,10 +215,10 @@ Each testbench applies all input combinations and displays the input and output 
 Example output for AND gate:
 
 ```
-Time=0  a=0 b=0 y=0
-Time=10 a=0 b=1 y=0
-Time=20 a=1 b=0 y=0
-Time=30 a=1 b=1 y=1
+Time=0     a=0 b=0 y=0
+Time=10000 a=0 b=1 y=0
+Time=20000 a=1 b=0 y=0
+Time=30000 a=1 b=1 y=1
 ```
 
 ---
